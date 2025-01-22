@@ -9,6 +9,11 @@ let users = [
   { id: 2, name: "Jane", email: "jane@example.com" },
 ];
 
+// Route handler
+app.get("/", (req, res) => {
+  res.send("Welcome to the User Management API!");
+});
+
 // Get user by id (provided)
 app.get("/api/users/:id", (req, res) => {
   const user = users.find((u) => u.id === parseInt(req.params.id));
